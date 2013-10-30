@@ -3,11 +3,11 @@
 sqsmonitor is used to check on the status of SQS queues.
 
     Usage:
-      sqsmonitor [options] queue [queue ...] [interval]
+      sqsmonitor [options] queuename [queuename ...] [interval]
 
     Parameters:
-      queue [queue ...]
-        One or more queue names to watch.  If not specified, defaults to process_actions.
+      queuename [queuename ...]
+        The names of one or more queues to watch.  If not specified, defaults to process_actions.
       interval
         Specified for continuous display: seconds between checks.
 
@@ -16,7 +16,7 @@ sqsmonitor is used to check on the status of SQS queues.
         Display extra metrics like inflight and delayed messages.
 
       -n|--nonzero
-        Only show given queues if they have messages
+        Only show queues with messages
 
       -a|--all
         Check all queues
@@ -24,12 +24,17 @@ sqsmonitor is used to check on the status of SQS queues.
       -t|--totals
 	    Only show totals, not individual queues
 
+      -r|--regexp
+	    Interpret queuenames as regular expressions instead of explicit names.
+
     Examples:
 	  sqsmonitor
 	  sqsmonitor -a -n
 	  sqsmonitor -e prod_process_actions-opens 1
 	  sqsmonitor prod_process_actions-opens prod_process_actions-installs 60
-	  
+
+Queues are listed by number of messages they hold, fullest queue first.
+
 ## Install from repo
 
 Once you have this repository checked out, do:
