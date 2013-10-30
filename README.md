@@ -35,3 +35,17 @@ sqsmonitor is used to check on the status of SQS queues.
 Once you have this repository checked out, do:
 
     npm link
+
+You'll need either a working ~/.s3cmd configuration or a ~/.sqsmonitor
+JSON config file, which looks like this:
+
+```json
+{ 
+  "accessKeyId": "AKIABFOJHE19JDLS4G3A",
+  "secretAccessKey": "J29OoH8JlsCdowF+jLSKU2/Hos8VJsl2jslkh22L",
+  "region": "us-west-1"
+}
+```
+
+
+
