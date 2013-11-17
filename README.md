@@ -21,8 +21,11 @@ sqsmonitor is used to check on the status of SQS queues.
       -a|--all
         Check all queues
 
-      -t|--totals
-	    Only show totals, not individual queues
+      -s|--sum
+	    Only show sum totals, not individual queues
+
+      -t|--top n
+	    Only show the largest n queues.
 
       -r|--regexp
 	    Interpret queuenames as regular expressions instead of explicit names.
@@ -32,6 +35,7 @@ sqsmonitor is used to check on the status of SQS queues.
 	  sqsmonitor -a -n
 	  sqsmonitor -e prod_process_actions-opens 1
 	  sqsmonitor prod_process_actions-opens prod_process_actions-installs 60
+	  sqsmonitor -r 'process_.*_actions' -t 3
 
 Queues are listed by number of messages they hold, fullest queue first.
 
@@ -41,8 +45,7 @@ Once you have this repository checked out, do:
 
     npm link
 
-You'll need either a working ~/.s3cmd configuration or a ~/.sqsmonitor
-JSON config file, which looks like this:
+You'll want a ~/.sqsmonitor JSON config file, which looks like this:
 
 ```json
 { 
@@ -51,6 +54,9 @@ JSON config file, which looks like this:
   "region": "us-west-1"
 }
 ```
+
+sqsmonitor can also use a [~/.s3cmd](http://s3tools.org/s3cmd)
+configuration file if you've got one.
 
 
 

@@ -1,6 +1,6 @@
 {
     "name": "sqsmonitor",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "description": "Monitor size/drain rate of SQS queues",
     "author": {
 	"name": "Allen Luce",
