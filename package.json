@@ -1,20 +1,20 @@
 {
   "name": "sqsmonitor",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Monitor size/drain rate of SQS queues",
   "author": {
-    "name": "Allen Luce",
-    "email": "allen@hasoffers.com"
+    "name": "Doug Luce",
+    "email": "doug@github.con.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hasallen/sqsmonitor.git"
+    "url": "git://github.com/dougluce/sqsmonitor.git"
   },
   "dependencies": {
-    "async": ">=0.2.9",
-    "aws-sdk": ">=2.2.10",
+    "async": ">=1.4.2",
+    "aws-sdk": ">=2.2.11",
     "iniparser": ">=1.0.5",
-    "stdio": ">=0.1.2",
+    "stdio": ">=0.2.7",
     "yargs": "^3.29.0"
   },
   "main": "lib/sqsmonitor.js",
@@ -22,6 +22,6 @@
     "sqsmonitor": "lib/cli.js"
   },
   "engines": {
-    "node": ">=0.3.7"
+    "node": ">=2.0.1"
   }
 }
