@@ -45,18 +45,22 @@ Once you have this repository checked out, do:
 
     npm link
 
-You'll want a ~/.sqsmonitor JSON config file, which looks like this:
+Make sure you've set up your AWS credentials in `~/.aws/credentials`:
 
-```json
-{ 
-  "accessKeyId": "AKIABFOJHE19JDLS4G3A",
-  "secretAccessKey": "J29OoH8JlsCdowF+jLSKU2/Hos8VJsl2jslkh22L",
-  "region": "us-west-1"
-}
+```
+[default]
+aws_access_key_id=AKIABFOJHE19JDLS4G3A
+aws_secret_access_key=J29OoH8JlsCdowF+jLSKU2/Hos8VJsl2jslkh22L",
 ```
 
-sqsmonitor can also use a [~/.s3cmd](http://s3tools.org/s3cmd)
-configuration file if you've got one.
+Region defaults to `us-east-1`.  You can override this via the
+`~/.aws/config` file:
 
+```
+[default]
+region = us-east-1
+```
 
-
+Like other AWS SDKs, you can use the `AWS_ACCESS_KEY_ID,
+`AWS_SECRET_ACCESS_KEY`, and `AWS_DEFAULT_REGION` environment
+variables instead of or to override the config file.
